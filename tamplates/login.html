@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>troca de livros</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+
+<header>
+
+<div class="jumbotron" style="background-color:green; background-image:linear-gradient(green, white">
+    <h1 class="text-center">
+        DOAÇÕES DE LIVROS
+    </h1>
+    <style>
+        h1 {
+        color: white;
+        text-shadow: 3px 3px 3px Blue;
+        }
+    </style>
+    <h2 class="text-center">Incentive a Leitura</h2>
+    <style>
+        h2 {
+        color: blue;
+        text-shadow: 2px 2px 2px white;
+        }
+    </style>
+    <center>
+        <img src= "https://4.bp.blogspot.com/--4J-pqHRTMQ/T4xcjxYorPI/AAAAAAAADU8/n5XCQ7_WFXw/s400/troca-livros.jpg" align="middle">
+    </center>
+</div>
+
+</header>
+
+<body>
+     <div class="container mt-4">
+        <form action="submit", method="POST"> {% csrf_token %}
+
+            <div class="form-group">
+                <label for="username">Usuario</label>
+                <input type="text", class="form-control" id="username" name="username" placeholder="Usuario">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password", class="form-control" id="password" name="password" placeholder="Senha">
+            </div>
+
+            <div>
+                {% for message in messages %}
+                <div class="alert alert-danger">
+                    <strong>Error!</strong>{{ message }}
+                </div>
+                {% endfor %}
+
+                <button type="submit" class="btn btn-success">Entrar</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+</html>
